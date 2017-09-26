@@ -1,0 +1,457 @@
+\documentclass[a4paper]{book}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}       %% Alternative à [latin1] pour les caractères accentués
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}        %% adapte le style article aux conventions francophones
+
+% Modèle de rapport suivant la charte Ensicaen 2017
+
+\input{preamble.tex}
+
+\renewcommand{\appendixpagename}{\color{ensigray}Annexes}
+
+\title{Titre du document}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Couverture
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newgeometry{top=1.8cm,bottom=2cm,height=25.9cm,width=19cm,left=1cm}
+\begin{titlepage}
+  \begin{center}
+    \huge\color{ensigray}École Publique d'Ingénieurs en 3 ans
+  \end{center}
+  \vspace{1.5in}
+  \begin{center}
+    \LARGE Rapport
+  \end{center}
+  \vspace{0.5cm}
+  \begin{minipage}{1\linewidth}
+    \centering
+    {\Huge  \MakeUppercase{\@title}}
+  \end{minipage}
+  \vspace{4em}
+  \begin{center}\large
+    le 10 avril 2017,
+
+    version 1.1
+  \end{center}
+  \vspace{4em}
+
+  \noindent\begin{minipage}[t]{0.47\linewidth}
+    \begin{flushright}
+      \large
+      Prénom NOM\\
+      Fonction\\
+      {\color{ensiblue}email@ensicaen.fr}
+    \end{flushright}
+  \end{minipage}\hfill\vrule\hfill
+  \begin{minipage}[t]{0.47\linewidth}
+    \large
+    Tuteur école~: Prénom NOM\\
+    Tuteur entreprise~: Prénom NOM\\
+  \end{minipage}
+  \vfill
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% LOGOS VERSION 0 ou 2 partenaires
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \noindent\begin{minipage}[c]{0.33\linewidth}
+    \center
+    {\color{red} A MODIFIER OU LAISSER VIDE}
+
+    Logo 1 (exemple~: l'entreprise)
+  \end{minipage}%
+  \begin{minipage}[c]{0.33\linewidth}
+    \center\includegraphics[width=0.8\linewidth]{logos/LogoEnsicaen2017_crop.png}\\[1em]
+    {\color{ensigray}\huge www.ensicaen.fr}
+  \end{minipage}%
+  \begin{minipage}[c]{0.33\linewidth}
+    \center
+    {\color{red} A MODIFIER OU LAISSER VIDE}
+    
+    Logo 2 (exemple~: le CFA)
+  \end{minipage}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% LOGOS VERSION 1 partenaire
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  % \noindent\begin{minipage}[c]{0.5\linewidth}
+  %   \center
+  %   \includegraphics[width=0.5\linewidth]{logos/LogoEnsicaen2017_crop.png}\\[1em]
+  % \end{minipage}%
+  % \begin{minipage}[c]{0.5\linewidth}
+  %   \center
+  %   \fbox{Logo 2 (exemple~: le CFA)}
+  % \end{minipage}
+  % \vspace{0.6in}
+  % \begin{center}
+  %   {\color{ensigray}\huge www.ensicaen.fr}
+  % \end{center}
+
+\end{titlepage}
+\restoregeometry
+\newgeometry{top=3.4cm,bottom=3.4cm,left=2.5cm,width=16cm}
+\setlength{\footskip}{2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Remerciements}
+\addcontentsline{toc}{section}{Remerciements}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\cftdot}{}
+\newpage
+
+% \titleformat
+% {\chapter}[display]{\normalfont\sffamily\Huge}{}{0em}{#1}
+% [\color{ensigray}\vspace{-0.75em}\rule{\textwidth}{2pt}]
+
+\tableofcontents
+\listoffigures       % Ligne à supprimer en l'absence de figures 
+\listoftables        % Ligne à supprimer en l'absence de tableaux
+% \endgroup
+
+\makeatletter
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright
+    \interlinepenalty\@M
+    \normalfont\sffamily\Huge \MakeUppercase{#1}\par\vskip-14pt\nobreak
+    \color{ensigray}\vspace{-0.75em}\rule{\textwidth}{2.25pt}
+    \vskip 16\p@
+  }}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{TITRE PARTIE / CHAPITRE}
+\addcontentsline{toc}{chapter}{TITRE PARTIE / CHAPITRE}
+
+\begin{center}
+  \begin{minipage}{0.7\linewidth}
+    \color{ensigray}\center
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \end{minipage}
+\end{center}
+
+\section{Titre section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsection{Titre sous-section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsubsection{Titre sous-sous-section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsubsection{Titre sous-sous-section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsection{Titre sous-section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+\paragraph{The aim of the experiment}\vspace{-10pt}\mbox{} \
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+Figure~\ref{fig:stepdiagram}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theoretical knowledge}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{Ultra-cold neutron}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+\cite{neutronLifeTime}.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\begin{figure}[ht]
+  \center
+  \includegraphics[width=0.5\textwidth]{pictures/GroupeEtudiants.png}
+  \caption{Un groupe d'étudiants.}
+  \label{fig:stepdiagram}
+\end{figure}
+
+\subsection{Titre sous-section}
+
+\rowcolors{2}{white}{gray!25}
+\begin{table}
+  \centering
+  \begin{tabular}{c|cccc}
+    \rowcolor{white}
+    \multicolumn{1}{l}{\textbf{COLONNE 1}} & \textbf{COLONNE 2} & \textbf{COLONNE 3} & \textbf{COLONNE 4} & \textbf{COLONNE 5}\\ \hline
+    \textbf{Ligne 1} & aaa & bbb & ccc & ddd\\
+    \textbf{ligne 2} & eee & fff & ggg & hhh\\
+    \textbf{ligne 3} & iii & jjj & kkk & lll\\
+  \end{tabular}
+  \caption{Un tableau de texte.}
+  \label{tab:text}
+\end{table}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat~\ref{eq:larmorFreq}:
+
+\begin{equation}
+  \begin{aligned}
+    \omega_\upuparrows=-\frac{\mu_a \, B_{0\upuparrows }+d_aE}{J\hbar} \hspace*{1cm}
+    \omega_{\uparrow \downarrow}=-\frac{\mu_a \, B_{0{\uparrow \downarrow} }+d_aE}{J\hbar}
+  \end{aligned}
+  \label{eq:larmorFreq}
+\end{equation}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsection{Titre sous-section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+\end{itemize}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\subsection{Magnetic strength}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\begin{enumerate}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+\item Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+\item Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\end{enumerate}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Titre section}
+
+\subsection{État de l'art}
+
+\subsection{Titre sous-section}
+
+\subsubsection{Titre sous-sous-section}
+
+\subsubsection{Titre sous-sous-section}
+
+\subsection{Titre sous-section}
+
+\subsection{Titre sous-section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendixpage
+\addcontentsline{toc}{section}{Appendix}
+\renewcommand{\thesection}{\Alph{section}}
+
+\begin{appendices}
+\section{Computer science knowledge}
+
+\section{STARucn's UML structure }
+
+
+\end{appendices}
+
+
+\begin{thebibliography}{9}
+\bibitem{Fig1}
+P. Harris, arXiv:0709.3100,2007.
+
+\bibitem{neutronLifeTime}
+ W.-M. Yao et al.(Particle Data Group), J. Phy. G331 (2006)
+
+\bibitem{GPpaper}
+J.M. Pendlebury et al., Geometric-phase-induced false electric dipole moment signals for particles in traps, Physical review A 70, 032102 (2004)
+
+\bibitem{BerryPhase}
+M. Berry, Proc. RSoc. London, Ser. A 392, 45 (1984)
+
+\bibitem{Manuel1}
+B. Clement, STARucn a software for Simulatoion of Transmission, Absorption and Reflection of ultra-cold neutron.
+
+\bibitem{Manuel2}
+N. Ayres, Sussex/STARucn, Sussex/STARucn Documentation (August 2014)
+
+\bibitem{Manuel3}
+N. Ayres, S. Blake , Sussex/STARucn, Sussex/STARucn Documentation.
+
+\bibitem{Manuel4}
+E. Chanel, N. Ayres, Introduction to the Sussex/STARucn code: A software for Simulation of Transmission, Absorption and Reflection of ultra-cold neutrons, Version 1.2  (March 2017)
+\end{thebibliography}
+
+
+%%
+%% 4e de couverture
+%%
+\MakeSureLastPageIsEven
+\newgeometry{top=1.8cm,bottom=1cm,height=26.9cm,width=19cm,left=1cm}
+\thispagestyle{empty}
+\begin{center}
+  \includegraphics[width=2.2in]{logos/LogoEnsicaen2017.png}
+\end{center}
+\vfill
+\hspace{18.2cm}\includegraphics[width=0.45in]{logos/SocialNetworks.png}%
+\begin{center}
+  \huge\color{ensigray}École Publique d'Ingénieurs en 3 ans
+\end{center}
+\colorbox{ensigray}{
+  \begin{minipage}[c]{1\linewidth}
+    \center\Large
+    \vspace{1em}
+    {\color{white}6 boulevard Maréchal Juin, CS 4505}
+
+    {\color{white}14050 CAEN cedex 04}
+    \vspace{1em}
+  \end{minipage}}\\[18pt]
+
+\rowcolors{1}{white}{}
+\begin{minipage}[c]{0.8in}
+  \includegraphics[width=1\linewidth]{logos/MENESR.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{1.12in}
+  \includegraphics[width=1\linewidth]{logos/NormandieUniversite.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.7in}
+  \includegraphics[width=1\linewidth]{logos/cti.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.7in}
+  \includegraphics[width=1\linewidth]{logos/cti.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{1.09in}
+  \includegraphics[width=1\linewidth]{logos/cdefi.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{1.17in}
+  \includegraphics[width=1\linewidth]{logos/cge.png}
+\end{minipage}\hfill
+\end{document}
